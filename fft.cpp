@@ -14,7 +14,11 @@ double *cos, *sin;
 int *bra;
 
 unsigned int rev_bits(unsigned int idx, unsigned int bitN) {
-  return 0;
+  unsigned int rev = 0;
+  FOR(i, 0, bitN) {
+    rev = (rev << 1) | (idx & i);  idx >>= i;
+  }
+  return rev;
 }
 
 bool fft_init(unsigned int N) {
