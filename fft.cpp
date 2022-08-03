@@ -22,6 +22,19 @@ unsigned int rev_bits(unsigned int idx, unsigned int bitN) {
 }
 
 bool fft_init(unsigned int N) {
+  if (notPow2(N)) return false;
+  int m = 0;
+  for(; n>>m; m++);
+
+  cosv = new double[N];
+  sinv = new double[N];
+  bra = new int[N];
+
+  FOR(i, 0, N) {
+    double v = 2*PI*i/N;
+    cosv[i] = cos(v); sinv[i] = sin(v);
+  }
+  FOR(i, 1, N) bra[i] = rev_bits(i, m-1);
   return true;
 }
 
