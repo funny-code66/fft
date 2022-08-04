@@ -39,7 +39,7 @@ bool fft_init(unsigned int N) {
 }
 
 void fft(double *x, double *y, int N) {
-  double a, e, xt, yt, c, s;
+  double a=0.0, e, xt, yt, c, s;
   int n1, n2, i, j, q, m;
   if(frexp((double)n, &m)!=1.0) m--;
   --y, --x, n2=n;
