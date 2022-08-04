@@ -72,3 +72,14 @@ void fft(double *x, double *y, int N) {
   return;
 }
 
+int main(void) {
+  double data[8192], zero[8192];
+  
+  fft_init();
+  fft(data, zero, N);
+
+  FOR(i, 0, N) cout << hypot(data[i], zero[i]) << endl;
+  delete [] data, zero;
+  
+  return 0;
+}
