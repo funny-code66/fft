@@ -73,6 +73,9 @@ void fft(double *x, double *y, int N) {
 }
 
 int main(void) {
+  freopen("in.in", "r", stdin);
+  freopen("out.out", "w", stdout);
+  
   double data[8192], zero[8192];
   
   fft_init();
