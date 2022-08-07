@@ -91,3 +91,8 @@ int main(void) {
   
   return 0;
 }
+
+// 5. Result & Analysis
+// Analog  Freq Resolution:    delta_f = F_sam/N = 40,000/8192(Hz)
+// Digital Freq Resolution:    delta_omega = 2*PI/8192
+// Expected spectrum position: loc = f_sig/delta_f = 102.4
